@@ -67,3 +67,48 @@ func Validate(req UserCreateRequest) string {
 		return "invalid request"
 	}
 }
+
+const (
+	ok        = 0
+	cancelled = 1
+	unknown   = 2
+)
+
+func ErrorMessageToCode(msg string) int {
+	switch msg {
+	case "OK":
+		return ok
+	case "CANCELLED":
+		return cancelled
+	default:
+		return unknown
+	}
+}
+
+type IVoiceable interface {
+	Voice() string
+}
+
+type Cat struct {
+	//
+}
+
+type Cow struct {
+	// …
+}
+
+type Dog struct {
+	// …
+}
+
+func (cat Cat) Voice() string {
+	return "Мяу"
+}
+
+func (cow Cow) Voice() string {
+	return "Мууу"
+}
+
+func (dog Dog) Voice() string {
+	return "Гав"
+}
