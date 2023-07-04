@@ -21,6 +21,7 @@ func main() {
 	fmt.Println(DomainForLocale("sss.com", ""))
 	fmt.Println(Validate(UserCreateRequest{"John", 15}))
 	fmt.Println(Validate(UserCreateRequest{"John f", 0}))
+	Start()
 }
 
 func intToString() string {
