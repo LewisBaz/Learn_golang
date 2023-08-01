@@ -15,6 +15,10 @@ func Start() {
 	// fmt.Println(SafeWrite([5]int{}, 5, 10))
 	fmt.Println(Remove(NumsSlice, 1))
 	fmt.Println(UniqueSortedUserIDs([]int64{1, 2, 2, 4, 5, 4, 7}))
+	// fmt.Println(UniqueSortedUserIDs([]int64{55, 2, 88, 33, 2, 2, 55, 103, 33, 88}))
+	// fmt.Println(UniqueSortedUserIDs([]int64{}))
+	fmt.Println(UniqueUserIDs([]int64{55, 2, 88, 33, 2, 2, 55, 103, 33, 88}))
+	fmt.Println(MostPopularWord([]string{"one", "two", "three", "four", "five"}))
 }
 
 func SafeWrite(nums [5]int, i, val int) [5]int {
@@ -74,4 +78,34 @@ func UniqueSortedUserIDs(userIDs []int64) []int64 {
 		}
 	}
 	return userIDs[:prev]
+}
+
+func UniqueUserIDs(userIDs []int64) []int64 {
+	m := map[int64]int{}
+	arr := []int64{}
+
+	for _, id := range userIDs {
+		m[id]++
+		if m[id] <= 1 {
+			arr = append(arr, id)
+		}
+	}
+
+	return arr
+}
+
+func MostPopularWord(words []string) string {
+	m := map[string]int{}
+	maxCount := 0
+	popularWord := ""
+
+	for _, word := range words {
+		m[word]++
+		if m[word] > maxCount {
+			maxCount = m[word]
+			popularWord = word
+		}
+	}
+
+	return popularWord
 }
