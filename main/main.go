@@ -22,6 +22,7 @@ func main() {
 	fmt.Println(Validate(UserCreateRequest{"John", 15}))
 	fmt.Println(Validate(UserCreateRequest{"John f", 0}))
 	Start()
+	stringsStart()
 }
 
 func intToString() string {
