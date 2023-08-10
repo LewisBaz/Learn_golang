@@ -7,7 +7,7 @@ import (
 	"unicode/utf8"
 )
 
-func stringsStart() {
+func StringsStart() {
 	fmt.Println(nextASCII(byte(100)))
 	fmt.Println(prevASCII(byte(99)))
 	fmt.Println(shiftASCII("abc1234", -511))
