@@ -24,6 +24,7 @@ func main() {
 	Start()
 	StringsStart()
 	FuncsStart()
+	StartErrors()
 }
 
 func intToString() string {
