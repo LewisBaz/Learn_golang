@@ -25,6 +25,7 @@ func main() {
 	StringsStart()
 	FuncsStart()
 	StartErrors()
+	StartAsync()
 }
 
 func intToString() string {
